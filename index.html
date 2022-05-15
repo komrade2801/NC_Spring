@@ -1,0 +1,115 @@
+  <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id"
+    content="375617435757-oapk0ruihfafpn85e93jv96envuhm5uc.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- My styles -->
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+  
+<body>
+
+<nav class="teal lighten-2" id="parkingNavbar">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Parkee</a>
+      <a href="#" data-target="parkingSidenav" class="sidenav-trigger">
+        <i class="material-icons">menu</i> </a>
+      <ul class="right hide-on-med-and-down">
+       <li><a id="signInHeaderButton">Авторизация</a></li>
+            <li><a href="profile.html">Профиль</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="parkingSidenav">
+    <li><a id="signInButton">Авторизация</a></li>
+            <li><a href="profile.html">Профиль</a></li>
+  </ul>
+  
+  
+<div id="parkingModal" class="modal">
+  
+    <div class="modal-content">
+      
+        <div class="modal-header">
+          <i class="material-icons right" id="modalCloseBtn">close</i>
+            <h5 class="modal-title">Меню парковки</h4>
+            
+        </div>
+            <ul class="collapsible">
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">add</i>Создание бронирования</div>
+                  <div class="collapsible-body" id="modalCollapsible">
+                    <form class = "row" id="parkingForm">
+                      <div class="input-field col s12">
+                       <label>Дата брони</label>
+                       <input type = "text" class = "datepicker" id="parkingDate"/>
+                      </div>
+                      <div class="input-field col s12">
+                       <label>Время начала</label>
+                       <input type = "text" class = "timepicker" id="startTime" />
+                      </div>
+                      <div class="input-field col s12">
+                       <label>Время конца</label>
+                       <input type = "text" class = "timepicker" id="endTime" />
+                      </div>
+                    </form>
+                    <button class="btn waves-effect waves-light green"
+              id="parkingSendButton" type="submit">Отправить
+                <i class="material-icons right">send</i>
+            </button>
+          
+            <button class="btn waves-effect waves-light red accent-3"
+              id="parkingDeclineButton" type="button">Отменить</button>
+                  </div>
+                  
+           
+                </li>
+                
+              
+              <li>
+                <div class="collapsible-header"><i class="material-icons">person</i>Мои бронирования</div>
+                <div class="collapsible-body" id="myBookings">
+
+                </div>
+              </li>
+              </ul>
+
+        
+    </div>
+</div>
+
+<div id="bookingFrame"></div>
+
+<footer class="page-footer teal lighten-2">
+  <div class="footer-copyright">
+    <div class="container">
+    © 2022 NC_Spring
+    <a class="grey-text text-lighten-2 right" href="https://www.netcracker.com/">Company site</a>
+    </div>
+  </div>
+</footer>
+  
+<script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+<!-- d3.js -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- my app -->
+<script src="app.js" type="module"></script>
+  
+</body>
+</html>

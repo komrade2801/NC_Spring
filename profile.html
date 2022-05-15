@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- My styles -->
+    <link rel="stylesheet" href="profileStyles.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="teal lighten-2" id="parkingNavbar">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">Parkee</a>
+          <a href="#" data-target="parkingSidenav" class="sidenav-trigger">
+            <i class="material-icons">menu</i> </a>
+          <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">Парковки</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+      <ul class="sidenav" id="parkingSidenav">
+        <li><a href="index.html">Парковки</a></li>
+      </ul>
+<div class="profileContents">
+    <div id="futureBookings">
+ <p style="font-size: 150%; font-family: Lato;" >Текущие бронирования:</p>
+ <table>
+<thead>
+  <th>Время начала</th>
+  <th>Время конца</th>
+  <th>Место</th>
+  <th>Стоимость</th>
+</thead>
+<tbody id="futureTable">
+</tbody>
+ </table>
+    </div>
+    <div id="pastBookings">
+      <p style="font-size: 150%; font-family: Lato;" >Прошедшие бронирования:</p>
+      <table>
+        <thead>
+          <th>Время начала</th>
+          <th>Время конца</th>
+          <th>Место</th>
+          <th>Стоимость</th>
+        </thead>
+        <tbody id="pastTable">
+        </tbody>
+         </table>
+    </div>
+
+</div>
+      <footer id="parkingFooter" class="page-footer teal lighten-2">
+        <div class="footer-copyright">
+          <div class="container">
+          © 2022 NC_Spring
+          <a class="grey-text text-lighten-2 right" href="https://www.netcracker.com/">Company site</a>
+          </div>
+        </div>
+      </footer>
+    <!-- Compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- my app -->
+<script src="profile.js" type="module"></script>
+</body>
+</html>
