@@ -313,21 +313,6 @@ function handleParkingClick() {
     M.toast({ html: 'Вы не авторизованы!' });
   }
 }
-
-async function getData() {
-  const url = 'http://localhost:8090/places/info';
-  const response = await fetch(url);
-  const respJ = response.json();
-  await respJ.then((localD) => {
-    for (let i = 0; i < localD.length; i += 1) {
-      localD[i].status = true;
-      delete localD[i].parkingId;
-      data.push(localD[i]);
-    }
-  });
-  draw();
-}
-
 function draw() {
   const parkings = svg.selectAll('.parking').data(data);
   const parkingHeight = 50;
@@ -363,6 +348,20 @@ function draw() {
           return 'rotate(0, 0, 0)';
       }
     });
+}
+
+async function getData() {
+  const url = 'http://localhost:8090/places/info';
+  const response = await fetch(url);
+  const respJ = response.json();
+  await respJ.then((localD) => {
+    for (let i = 0; i < localD.length; i += 1) {
+      localD[i].status = true;
+      delete localD[i].parkingId;
+      data.push(localD[i]);
+    }
+  });
+  draw();
 }
 
 let socket;
