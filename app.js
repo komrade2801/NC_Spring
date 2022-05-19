@@ -82,7 +82,7 @@ async function confirmBooking() {
   today.setMinutes(strE[1]);
   const checkTimeE = today;
   today = new Date();
-  if (checkTimeS === '' || checkTimeE === '') {
+  if (startTime == '' || endTime == '') {
     M.toast({ html: 'Введите время начала и конца брони' });
   } else if (checkTimeS >= checkTimeE) {
     M.toast({ html: 'Введите корректное время брони' });
