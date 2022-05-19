@@ -16,11 +16,11 @@ const response1 = fetch(
       console.log(localD.length);
       for (let i = 0; i < localD.length; i += 1) {
         const newBooking = document.createElement('tr');
-        newBooking.className = `bookingText${String(localD[i].placeId)}`;
+        newBooking.className = 'booking';
         const dateR = document.createElement('td');
         let date = new Date();
         date.setTime(localD[i].startDateReser);
-        date = `${date.getFullYear.toString}-${date.getMonth.toString}-${date.getDay.toString}`;
+        date = date.toLocaleDateString();
         dateR.innerHTML = date;
         newBooking.appendChild(dateR);
         const timeS = document.createElement('td');
@@ -32,11 +32,40 @@ const response1 = fetch(
         const nomer = document.createElement('td');
         nomer.innerHTML = localD[i].placeId;
         newBooking.appendChild(nomer);
-        const cost = document.createElement('td');
-        cost.innerHTML = localD[i].coast;
-        newBooking.appendChild(cost);
         currentBookings.push(localD[i]);
         display.appendChild(newBooking);
+        const btn = document.createElement('div');
+        btn.innerHTML = 'Отменить';
+        btn.className = 'btn-small waves-effect waves-light red';
+        const toDelete = {
+          reservationId: localD[i].reservationId,
+          placeId: localD[i].placeId,
+          startTimeReser: localD[i].startTimeReser,
+        };
+        // eslint-disable-next-line no-loop-func
+        btn.onclick = async () => {
+          const resp = await fetch('http://localhost:8090/reservation/delete', {
+            method: 'DELETE',
+            credentials: 'include',
+            body: JSON.stringify(toDelete),
+          }).then((resp) => {
+            switch (resp.status) {
+              case 200:
+                M.toast({ html: 'Удаление успешно' });
+                btn.parentElement.innerHTML = '';
+                break;
+              case 400:
+                M.toast({ html: 'Авторизуйтесь заново' });
+                break;
+              case 500:
+                M.toast({ html: 'Ошибка на сервере' });
+                break;
+              default:
+                M.toast({ html: 'Unexpected behaviour' });
+            }
+          });
+        };
+        newBooking.appendChild(btn);
       }
     });
   } else {
