@@ -1,0 +1,15 @@
+{
+  "name": "parkee",
+  "version": "1.0.0",
+  "description": "My first ever client-server js-spring app.",
+  "main": "app.js",
+  "scripts": {
+    
+  },
+  "author": "Kris Hill",
+  "license": "ISC",
+
+  "devDependencies": {
+    "eslint": "^8.15.0"
+  }
+}
