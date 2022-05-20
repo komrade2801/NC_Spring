@@ -68,6 +68,7 @@ const response1 = fetch(
           });
         };
         newBooking.appendChild(btn);
+        newBooking.style.cssText = 'justify-content:center;';
       }
     });
   } else {
