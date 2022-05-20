@@ -38,6 +38,8 @@ const response1 = fetch(
         const btn = document.createElement('div');
         btn.innerHTML = 'Отменить';
         btn.className = 'btn-small waves-effect waves-light red';
+        btn.style.position = 'relative';
+        btn.style.top = '8px';
         const toDelete = {
           reservationId: localD[i].reservationId,
           placeId: localD[i].placeId,
