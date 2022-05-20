@@ -293,7 +293,7 @@ function handleParkingClick() {
           method: 'DELETE',
           credentials: 'include',
           body: JSON.stringify(toDelete),
-        }).then((resp) => {
+        }).then(async (resp) => {
           switch (resp.status) {
             case 200:
               M.toast({ html: 'Удаление успешно' });
@@ -301,6 +301,7 @@ function handleParkingClick() {
               if (menu.hasChildNodes) {
                 menu.innerHTML = 'У вас нет бронирований';
               }
+              await drawCircles();
               break;
             case 400:
               M.toast({ html: 'Авторизуйтесь заново' });
