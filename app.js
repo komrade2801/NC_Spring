@@ -1,5 +1,6 @@
 import { closeBookingModal, openBookingModal } from './interface.js';
 
+document.title = 'Parkee';
 let currentParking = null;
 let userID;
 const data = [];

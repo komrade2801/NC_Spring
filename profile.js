@@ -1,3 +1,4 @@
+document.title = 'Профиль';
 $(document).ready(() => {
   $('.sidenav').sidenav();
 });
