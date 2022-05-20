@@ -359,9 +359,10 @@ async function getData() {
   const respJ = response.json();
   await respJ.then((localD) => {
     for (let i = 0; i < localD.length; i += 1) {
-      localD[i].status = true;
-      delete localD[i].parkingId;
-      data.push(localD[i]);
+      const temp = localD[i];
+      temp.status = true;
+      delete temp.parkingId;
+      data.push(temp);
     }
   });
   draw();
