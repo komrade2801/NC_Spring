@@ -275,6 +275,9 @@ function handleParkingClick() {
       newBooking.className = 'bookingText';
       newBooking.style.paddingTop = '5px';
       menu.appendChild(newBooking);
+      let date = new Date();
+      date.setTime(element.startDateReser);
+      date = date.toLocaleDateString();
       newBooking.innerHTML = `${element.startTimeReser}-${element.endTimeReser}`;
       const btn = document.createElement('div');
       btn.innerHTML = 'Отменить';
@@ -283,7 +286,7 @@ function handleParkingClick() {
         reservationId: element.reservationId,
         placeId: element.placeId,
         startTimeReser: element.startTimeReser,
-        startDateReser: element.startDateReser,
+        startDateReser: date,
       };
       btn.onclick = async () => {
         const resp = await fetch('http://localhost:8090/reservation/delete', {
