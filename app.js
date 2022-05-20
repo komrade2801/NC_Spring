@@ -283,6 +283,7 @@ function handleParkingClick() {
         reservationId: element.reservationId,
         placeId: element.placeId,
         startTimeReser: element.startTimeReser,
+        startDateReser: element.startDateReser,
       };
       btn.onclick = async () => {
         const resp = await fetch('http://localhost:8090/reservation/delete', {
