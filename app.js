@@ -87,8 +87,10 @@ async function confirmBooking() {
     M.toast({ html: 'Введите время начала и конца брони' });
   } else if (checkTimeS >= checkTimeE) {
     M.toast({ html: 'Введите корректное время брони' });
-  } else if (today >= checkTimeS) {
-    M.toast({ html: 'Время начала бронирования уже прошло' });
+  } else if (today.getDate === parkingDate.getDate) {
+    if (today >= startTime) {
+      M.toast({ html: 'Время начала бронирования уже прошло' });
+    }
   } else {
     const reservation = {
       userId: 1,
